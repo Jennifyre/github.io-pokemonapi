@@ -1,15 +1,16 @@
 body {
+  display: flex;
+  font-family: sans-serif;
+  justify-content: center;
+  .pokedex {
+    align-items: flex-end;
     display: flex;
-    font-family: sans-serif;
-    justify-content: center;
-     .pokedex {
-        align-items: flex-end;
-        display: flex;
-        height: 500px;
-        margin: 50px;
-        width: 800px;
-     }
+    height: 500px;
+    margin: 50px;
+    width: 800px;
+  }
 }
 
 @import "./top-container";
 @import "./bottom-container";
+@import "./types";
