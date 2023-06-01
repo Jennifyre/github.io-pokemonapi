@@ -1,0 +1,206 @@
+// mixins
+@mixin top-buttons {
+  border-radius: 50%;
+  border: 1px solid black;
+  height: 10px;
+  margin-right: 5px;
+  width: 10px;
+}
+
+// css
+.top-container {
+  border: 3px solid black;
+  width: 50%;
+  background: aqua;
+  height: 100%;
+  width: calc(50% + 50px);
+  .top-container_top-section {
+    border-bottom: 3px solid black;
+    display: flex;
+    height: 50px;
+    padding: 8px;
+    .top-large_button {
+      background: radial-gradient(
+        farthest-corner at 10px 10px,
+        white,
+        #369cd4,
+        #369cd4
+      );
+      border-radius: 50%;
+      border: 2px solid white;
+      box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.5);
+      height: 30px;
+      width: 30px;
+    }
+    .top-small_buttons {
+      display: flex;
+      margin: 0 25px;
+      .top-button_red,
+      .top-button_yellow,
+      .top-button_green {
+        @include top-buttons();
+      }
+    }
+  }
+  .top-container_main-section-container {
+    display: flex;
+    height: calc(100% - 50px);
+    .top-container_main-section {
+      height: 100%;
+      padding: 25px;
+      width: 500px;
+      .mainsection_white {
+        background: #dedede;
+        border: 3px solid black;
+        box-shadow: inset 0 0 3px 3px rgba(0, 0, 0, 0.3);
+        height: 325px;
+        .main-section_black {
+          background: black;
+          height: calc(100% - 50px);
+          margin: 25px;
+          padding: 10px;
+          width: calc(100% - 50px);
+          .main-screen {
+            border-radius: 15px;
+            height: 100%;
+            padding: 15px;
+            .screen-header {
+              align-items: center;
+              display: flex;
+              justify-content: space-between;
+              .poke-name {
+                color: white;
+                font-size: 25px;
+                font-weight: bold;
+              }
+              .poke-id {
+                color: rgba(0, 0, 0, 0.5);
+                font-size: 20px;
+              }
+            }
+            .screen_image {
+              display: flex;
+              justify-content: space-around;
+              .poke-front-image,
+              .poke-back-image {
+                height: 96px;
+                width: 96px;
+              }
+            }
+            .screen_description {
+              display: flex;
+              height: 100px;
+              justify-content: space-around;
+              .stats_types {
+                height: 100%;
+                padding: 5px;
+                .poke-type-one,
+                .poke-type-two {
+                  background: rgba(255, 255, 255, 0.3);
+                  border-radius: 25px;
+                  display: block;
+                  margin-bottom: 10px;
+                  padding: 10px;
+                  text-align: center;
+                }
+              }
+              .screen_stats {
+                background: rgba(0, 0, 0, 0.3);
+                border-radius: 5px;
+                color: white;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                justify-content: space-between;
+                padding: 20px 15px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .top-container_controller {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 25px 0;
+    .controller_d-pad {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      .d-pad_top {
+        border-left: 1px solid dimgrey;
+        border-radius: 5px 5px 0 0;
+        border-right: 1px solid dimgrey;
+        border-top: 1px solid dimgrey;
+        grid-column: 2 / span 1;
+        grid-row: 1 / span 1;
+      }
+      .d-pad_left {
+        border-bottom: 1px solid dimgrey;
+        border-left: 1px solid dimgrey;
+        border-radius: 5px 0 0 5px;
+        border-top: 1px solid dimgrey;
+        grid-column: 1 / span 1;
+        grid-row: 2 / span 1;
+      }
+      .d-pad_middle {
+        grid-column: 2 / span 1;
+        grid-row: 2 / span 1;
+      }
+      .d-pad_right {
+        border-bottom: 1px solid dimgrey;
+        border-radius: 0 5px 5px 0;
+        border-right: 1px solid dimgrey;
+        border-top: 1px solid dimgrey;
+        grid-column: 3 / span 1;
+        grid-row: 2 / span 1;
+      }
+      .d-pad_bottom {
+        border-bottom: 1px solid dimgrey;
+        border-left: 1px solid dimgrey;
+        border-radius: 0 0 5px 5px;
+        border-right: 1px solid dimgrey;
+        grid-column: 2 / span 1;
+        grid-row: 3 / span 1;
+      }
+    }
+    .controller_buttons {
+      display: flex;
+      justify-content: space-around;
+      width: 100px;
+      .buttons_button {
+        align-items: center;
+        background: black;
+        border-radius: 50%;
+        border: 1px solid dimgrey;
+        box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.3);
+        color: rgba(255, 255, 255, 0.75);
+        display: flex;
+        height: 35px;
+        justify-content: center;
+        width: 35px;
+      }
+    }
+    .top-container_right {
+      border-left: 3px solid black;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: space-between;
+      width: 50px;
+      .left-container_hinge {
+        background: linear-gradient(
+          to right,
+          #7f100f,
+          #e71d23,
+          #e71d23,
+          #7f100f
+        );
+        height: 75px;
+        width: 100%;
+      }
+    }
+  }
+}
